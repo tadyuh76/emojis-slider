@@ -11,64 +11,45 @@
 </head>
 
 <body>
-    <h1>Happy Birthday to me ❤ </h1>
-    <div class="wrapper">
-        <div class="section">
-            <ul class="emojis">
-                <li class="slide-emoji"><img src="emojis/1.png" alt=""></li>
-                <li><img src="emojis/2.png" alt=""></li>
-                <li><img src="emojis/3.png" alt=""></li>
-                <li><img src="emojis/4.png" alt=""></li>
-                <li><img src="emojis/5.png" alt=""></li>
-            </ul>
+    <section>
+        <div class="wrapper">
+            <h1>Happy Birthday to me ❤ </h1>
+            <div class="section">
+                <ul class="emojis">
+                    <li class="slide-emoji"><img src="emojis/1.png" alt=""></li>
+                    <li><img src="emojis/2.png" alt=""></li>
+                    <li><img src="emojis/3.png" alt=""></li>
+                    <li><img src="emojis/4.png" alt=""></li>
+                    <li><img src="emojis/5.png" alt=""></li>
+                </ul>
+            </div>
+            <div class="slider">
+                <div class="thumb"><span></span></div>
+                <div class="progress-bar"></div>
+                <input type="range" min="0" value="0" max="100">
+            </div>
         </div>
-        <div class="slider">
-            <div class="thumb"><span></span></div>
-            <div class="progress-bar"></div>
-            <input type="range" min="0" value="0" max="100">
+    </section>
+    <!--Modal-->
+    <div id="myModal" class="modal">
+        <!-- Modal content -->
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h3>Thanks everyone </br>❤❤❤</h3>
+            <img src="img/huyen.jpg" alt="" />
+            <img src="img/alinh1.jpg" alt="" />
+            <span style="color: gray; margin-bottom: -10px">Ánh Linh vẽ nè ❤</span>
+            <img src="img/alinh2.jpeg" alt=""/>
+            <img src="img/chau1.jpg" alt="" />
+            <span style="color: gray; margin-bottom: -10px">"Bánh kem" của cabac 😶</span>
+            <img src="img/chau2.jpeg" alt="" />
+            <img src="img/quy.jpg" alt="" />
+            <img src="img/tlinh.jpg" alt="" />
+            <img src="img/cuong.jpg" alt="" />
+            <img src="img/xduy.jpg" alt="" />
         </div>
     </div>
-    <script>
-        const body = document.querySelector("body");
-        const h1 = document.querySelector("h1");
-        const emoji = document.querySelector(".slide-emoji");
-        const input = document.querySelector("input");
-        const bar = document.querySelector(".progress-bar");
-        const thumb = document.querySelector(".thumb");
-        input.oninput = () => {
-            let sliderValue = input.value;
-            thumb.style.left = sliderValue + '%';
-            bar.style.width = sliderValue + '%';
-            if (sliderValue < 20) {
-                emoji.style.marginTop = "0px";
-                body.classList.add("angry");
-                body.classList.remove("confuse");
-                body.classList.remove("like");
-            }
-            if (sliderValue >= 20) {
-                emoji.style.marginTop = "-140px";
-                body.classList.add("confuse");
-                body.classList.remove("angry");
-                body.classList.remove("like");
-            }
-            if (sliderValue >= 40) {
-                emoji.style.marginTop = "-280px";
-            }
-            if (sliderValue >= 60) {
-                emoji.style.marginTop = "-420px";
-                body.classList.add("like");
-                body.classList.remove("confuse");
-                body.classList.remove("angry");
-            }
-            if (sliderValue >= 80) {
-                emoji.style.marginTop = "-560px";
-            }
-            if (sliderValue == 100) {
-                h1.style.display = "block";
-                h1.classList.add("animated");
-            }
-        }
-    </script>
+    <script src="main.js"></script>
 </body>
 
 </html>
